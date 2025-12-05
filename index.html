@@ -1,0 +1,1874 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="خدمات احترافية لفتح الأقفال وبرمجة السيارات ونسخ المفاتيح في أم درمان - خدمة 24 ساعة - فنيون معتمدون">
+    <meta name="keywords" content="فتح أقفال, برمجة سيارات, نسخ مفاتيح, أم درمان, أقفال سيارات, فتح أبواب, أقفال منازل">
+    <title>مفتاح أم درمان - خدمات فتح الأقفال وبرمجة السيارات ونسخ المفاتيح</title>
+    
+    <!-- تحسين SEO -->
+    <meta property="og:title" content="مفتاح أم درمان - خدمات فتح الأقفال وبرمجة السيارات">
+    <meta property="og:description" content="خدمات احترافية لفتح الأقفال وبرمجة السيارات ونسخ المفاتيح في أم درمان">
+    <meta property="og:type" content="website">
+    
+    <!-- EmailJS لارسال الرسائل -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    
+    <!-- روابط CSS و Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- مكتبة Animate.css للحركات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+    <!-- مكتبة particles.js للخلفيات المتحركة -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
+    <style>
+        /* CSS الأساسي */
+        :root {
+            --primary-color: #D4AF37; /* ذهبي */
+            --secondary-color: #B8860B; /* ذهبي داكن */
+            --dark-color: #1a1a1a;
+            --medium-color: #333333;
+            --light-color: #f8f8f8;
+            --accent-color: #C0C0C0; /* فضي */
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Cairo', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: var(--light-color);
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* الهيدر */
+        header {
+            background-color: rgba(26, 26, 26, 0.95);
+            color: white;
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+        }
+        
+        header.scrolled {
+            padding: 10px 0;
+            background-color: rgba(26, 26, 26, 0.98);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+        }
+        
+        .logo-icon {
+            color: var(--primary-color);
+            font-size: 32px;
+            transition: transform 0.5s ease;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+        
+        .logo:hover .logo-icon {
+            transform: rotate(360deg) scale(1.1);
+        }
+        
+        .logo h1 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--primary-color), #FFD700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            padding: 8px 15px;
+            position: relative;
+            border-radius: 5px;
+        }
+        
+        nav a:hover {
+            color: var(--primary-color);
+            background: rgba(212, 175, 55, 0.1);
+        }
+        
+        nav a.active {
+            color: var(--primary-color);
+            background: rgba(212, 175, 55, 0.1);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            z-index: 1002;
+        }
+        
+        .mobile-menu-btn:hover {
+            transform: scale(1.1);
+            color: var(--primary-color);
+        }
+        
+        /* جسيمات الخلفية المتحركة */
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+        
+        /* قسم الهيرو */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.9)), url('https://images.unsplash.com/photo-1593455189187-7d1340107a01?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            text-align: center;
+            padding: 180px 20px 120px;
+            position: relative;
+            overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 25px;
+            line-height: 1.2;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+            background: linear-gradient(45deg, var(--primary-color), #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: var(--dark-color);
+            padding: 18px 40px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: var(--transition);
+            border: none;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+        }
+        
+        .cta-button:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+            transition: all 0.6s ease;
+            z-index: -1;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+            color: var(--dark-color);
+        }
+        
+        .cta-button:hover:before {
+            left: 0;
+        }
+        
+        .cta-button.secondary {
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+        
+        .cta-button.secondary:before {
+            background: var(--primary-color);
+        }
+        
+        .cta-button.secondary:hover {
+            color: var(--dark-color);
+        }
+        
+        /* شريط التقدم */
+        .progress-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: transparent;
+            z-index: 1001;
+        }
+        
+        .progress-bar {
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            width: 0%;
+            transition: width 0.3s ease;
+            box-shadow: 0 0 10px var(--primary-color);
+        }
+        
+        /* زر العودة للأعلى */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: var(--dark-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            transition: var(--transition);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .back-to-top:hover {
+            background: var(--secondary-color);
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+        }
+        
+        /* قسم الخدمات */
+        .services {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%);
+            position: relative;
+        }
+        
+        .services:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.1), transparent);
+            opacity: 0.1;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 70px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark-color);
+            position: relative;
+            display: inline-block;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        .section-title p {
+            color: var(--medium-color);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+            text-align: center;
+            padding: 40px 30px;
+            position: relative;
+            transform: translateY(30px);
+            opacity: 0;
+            border-top: 4px solid transparent;
+        }
+        
+        .service-card:nth-child(1) { border-top-color: var(--primary-color); }
+        .service-card:nth-child(2) { border-top-color: var(--secondary-color); }
+        .service-card:nth-child(3) { border-top-color: #C0C0C0; }
+        
+        .service-card.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .service-icon {
+            font-size: 60px;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            transition: transform 0.5s ease;
+            display: inline-block;
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.2) rotate(10deg);
+            color: var(--secondary-color);
+        }
+        
+        .service-card h3 {
+            font-size: 1.7rem;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+        }
+        
+        .service-card p {
+            color: var(--medium-color);
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+        
+        .service-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 20px 0;
+        }
+        
+        /* قسم لماذا نحن */
+        .why-us {
+            background: linear-gradient(135deg, var(--dark-color) 0%, #2a2a2a 100%);
+            color: white;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .why-us:before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+        }
+        
+        .why-us .section-title h2 {
+            color: white;
+        }
+        
+        .why-us .section-title p {
+            color: #ccc;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .feature {
+            text-align: center;
+            padding: 40px 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            transition: var(--transition);
+            transform: translateY(30px);
+            opacity: 0;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), transparent);
+        }
+        
+        .feature.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .feature:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-10px);
+            border-color: rgba(212, 175, 55, 0.3);
+        }
+        
+        .feature i {
+            font-size: 50px;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            transition: transform 0.5s ease;
+        }
+        
+        .feature:hover i {
+            transform: scale(1.2);
+            color: #FFD700;
+        }
+        
+        .feature h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        
+        /* قسم الإحصائيات */
+        .stats {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--dark-color);
+            text-align: center;
+        }
+        
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+        
+        .stat-item {
+            padding: 30px;
+        }
+        
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .stat-text {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        /* قسم الاتصال */
+        .contact {
+            padding: 100px 0;
+            background: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') center/cover no-repeat fixed;
+            position: relative;
+        }
+        
+        .contact:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(26, 26, 26, 0.9);
+        }
+        
+        .contact .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .contact .section-title h2 {
+            color: white;
+        }
+        
+        .contact .section-title p {
+            color: #ddd;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 60px;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: white;
+        }
+        
+        .contact-info p {
+            margin-bottom: 25px;
+            color: #ccc;
+            line-height: 1.8;
+        }
+        
+        .contact-details {
+            margin-top: 40px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            transition: transform 0.3s ease;
+            padding: 15px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .contact-item:hover {
+            transform: translateX(-10px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .contact-item i {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: var(--dark-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 20px;
+            font-size: 20px;
+            transition: transform 0.3s ease;
+        }
+        
+        .contact-item:hover i {
+            transform: scale(1.1);
+            background: var(--secondary-color);
+        }
+        
+        .social-media {
+            display: flex;
+            gap: 20px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 55px;
+            height: 55px;
+            background: var(--dark-color);
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 22px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .social-icon:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: all 0.6s ease;
+        }
+        
+        .social-icon:hover:before {
+            left: 100%;
+        }
+        
+        .social-icon.facebook { background: #1877F2; }
+        .social-icon.instagram { background: linear-gradient(45deg, #405DE6, #E4405F, #FFC107); }
+        .social-icon.whatsapp { background: #25D366; }
+        .social-icon.tiktok { background: #000000; }
+        
+        .social-icon:hover {
+            transform: translateY(-8px) scale(1.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .contact-form {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            transform: translateY(30px);
+            opacity: 0;
+            backdrop-filter: blur(10px);
+        }
+        
+        .contact-form.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .contact-form h3 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: var(--dark-color);
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-family: 'Cairo', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+            background: white;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+        }
+        
+        .form-group textarea {
+            min-height: 180px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: var(--dark-color);
+            border: none;
+            padding: 18px 40px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+            width: 100%;
+            font-family: 'Cairo', sans-serif;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+        }
+        
+        .submit-btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+            transition: all 0.6s ease;
+            z-index: -1;
+        }
+        
+        .submit-btn:hover:before {
+            left: 0;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+        }
+        
+        /* الرسائل */
+        .message {
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            display: none;
+            animation: fadeIn 0.5s ease;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .message.success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 2px solid #c3e6cb;
+            display: block;
+        }
+        
+        .message.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 2px solid #f5c6cb;
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .loading {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .loading i {
+            color: var(--primary-color);
+            font-size: 28px;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* الفوتر */
+        footer {
+            background: linear-gradient(135deg, #111111 0%, var(--dark-color) 100%);
+            color: white;
+            padding: 80px 0 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        footer:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+        
+        .footer-logo h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, var(--primary-color), #FFD700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .footer-logo p {
+            color: #aaa;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+        
+        .footer-links h3,
+        .footer-services h3 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+            color: white;
+        }
+        
+        .footer-links h3:after,
+        .footer-services h3:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background: var(--primary-color);
+            bottom: 0;
+            right: 0;
+        }
+        
+        .footer-links ul,
+        .footer-services ul {
+            list-style: none;
+        }
+        
+        .footer-links li,
+        .footer-services li {
+            margin-bottom: 15px;
+        }
+        
+        .footer-links a,
+        .footer-services a {
+            color: #aaa;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-block;
+            font-size: 1.1rem;
+        }
+        
+        .footer-links a:hover,
+        .footer-services a:hover {
+            color: var(--primary-color);
+            padding-right: 10px;
+            transform: translateX(-5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #888;
+            font-size: 0.95rem;
+        }
+        
+        /* تصميم متجاوب */
+        @media (max-width: 1200px) {
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+            
+            nav ul {
+                gap: 15px;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-button {
+                width: 80%;
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                padding: 12px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                position: absolute;
+                left: 20px;
+                top: 15px;
+            }
+            
+            nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                height: 100vh;
+                background: rgba(26, 26, 26, 0.98);
+                backdrop-filter: blur(10px);
+                transition: right 0.4s ease;
+                z-index: 1001;
+                padding: 100px 30px 30px;
+                overflow-y: auto;
+                box-shadow: -5px 0 20px rgba(0, 0, 0, 0.2);
+            }
+            
+            nav.active {
+                right: 0;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 0;
+            }
+            
+            nav li {
+                width: 100%;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            
+            nav a {
+                display: block;
+                padding: 18px 0;
+                font-size: 1.2rem;
+            }
+            
+            .hero {
+                padding: 150px 20px 80px;
+            }
+            
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .services-grid,
+            .features {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-form {
+                padding: 30px 20px;
+            }
+            
+            .back-to-top {
+                left: 20px;
+                bottom: 20px;
+                width: 45px;
+                height: 45px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h2 {
+                font-size: 1.6rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .cta-button {
+                width: 100%;
+                padding: 16px 20px;
+                font-size: 1.1rem;
+            }
+            
+            .service-card,
+            .feature {
+                padding: 30px 20px;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .stat-number {
+                font-size: 2.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- شريط التقدم -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- زر العودة للأعلى -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <!-- الهيدر -->
+    <header id="mainHeader">
+        <div class="container header-container">
+            <div class="logo" id="logo">
+                <i class="fas fa-key logo-icon"></i>
+                <h1>مفتاح <span>أم درمان</span></h1>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#home" class="active">الرئيسية</a></li>
+                    <li><a href="#services">خدماتنا</a></li>
+                    <li><a href="#why-us">لماذا نحن</a></li>
+                    <li><a href="#contact">اتصل بنا</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- قسم الهيرو -->
+    <section class="hero" id="home">
+        <!-- جسيمات الخلفية المتحركة -->
+        <div id="particles-js"></div>
+        
+        <div class="container hero-content">
+            <h2 class="animate__animated animate__fadeInDown">أفضل خدمات الأقفال والمفاتيح في أم درمان</h2>
+            <p class="animate__animated animate__fadeInUp animate__delay-1s">نقدم حلولاً متكاملة لجميع مشاكل الأقفال والمفاتيح بأسعار منافسة وجودة لا تقارن. فريقنا من الفنيين المعتمدين جاهز لخدمتك على مدار الساعة.</p>
+            
+            <div class="hero-buttons">
+                <a href="tel:+249913530510" class="cta-button animate__animated animate__pulse animate__delay-2s">
+                    <i class="fas fa-phone-alt"></i> اتصل الآن: 249913530510+
+                </a>
+                <a href="#contact" class="cta-button secondary animate__animated animate__pulse animate__delay-3s">
+                    <i class="fas fa-envelope"></i> اطلب خدمة
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الخدمات -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>خدماتنا الاحترافية</h2>
+                <p>نوفر مجموعة شاملة من الخدمات المتعلقة بالأقفال والمفاتيح باستخدام أحدث التقنيات وأفضل الأسعار</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-unlock-alt service-icon"></i>
+                    <h3>فتح جميع أنواع الأقفال</h3>
+                    <p>نفتح جميع أنواع الأقفال المنزلية، أقفال السيارات، أقفال المكاتب والخزائن الحديدية بدون إتلاف القفل وبأحدث الأدوات.</p>
+                    <div class="service-price">يبدأ من 50,000 جنيه</div>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-car-alt service-icon"></i>
+                    <h3>برمجة مفاتيح السيارات</h3>
+                    <p>برمجة وإصلاح مفاتيح السيارات الإلكترونية والريموت لجميع الماركات والموديلات مع ضمان الجودة والكفاءة.</p>
+                    <div class="service-price">يبدأ من 150,000 جنيه</div>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-key service-icon"></i>
+                    <h3>نسخ جميع أنواع المفاتيح</h3>
+                    <p>نسخ المفاتيح المعدنية والإلكترونية بمنتهى الدقة على أحدث الماكينات مع ضمان المطابقة التامة للأصل.</p>
+                    <div class="service-price">يبدأ من 30,000 جنيه</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم لماذا نحن -->
+    <section class="why-us" id="why-us">
+        <div class="container">
+            <div class="section-title">
+                <h2>لماذا نحن الخيار الأمثل؟</h2>
+                <p>نتميز بتقديم خدمات عالية الجودة مع الحفاظ على سرعة الاستجابة وأسعار منافسة</p>
+            </div>
+            
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-clock"></i>
+                    <h3>خدمة 24/7</h3>
+                    <p>نعمل على مدار الساعة طوال أيام الأسبوع لمساعدتك في حالات الطوارئ.</p>
+                </div>
+                
+                <div class="feature">
+                    <i class="fas fa-user-shield"></i>
+                    <h3>فنيون معتمدون</h3>
+                    <p>فريقنا من الفنيين المدربين والمحترفين يضمن لك خدمة بأعلى معايير الجودة والأمان.</p>
+                </div>
+                
+                <div class="feature">
+                    <i class="fas fa-tools"></i>
+                    <h3>أدوات متطورة</h3>
+                    <p>نستخدم أحدث الأدوات والتقنيات العالمية لضمان إنجاز العمل بدقة وسرعة فائقة.</p>
+                </div>
+                
+                <div class="feature">
+                    <i class="fas fa-award"></i>
+                    <h3>ضمان الجودة</h3>
+                    <p>نقدم ضمانًا على جميع خدماتنا لضمان رضاكم التام عن الخدمة المقدمة.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الإحصائيات -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-container">
+                <div class="stat-item">
+                    <span class="stat-number" id="stat1">0</span>
+                    <span class="stat-text">عميل راضي</span>
+                </div>
+                
+                <div class="stat-item">
+                    <span class="stat-number" id="stat2">0</span>
+                    <span class="stat-text">خدمة مكتملة</span>
+                </div>
+                
+                <div class="stat-item">
+                    <span class="stat-number" id="stat3">0</span>
+                    <span class="stat-text">سنة خبرة</span>
+                </div>
+                
+                <div class="stat-item">
+                    <span class="stat-number" id="stat4">0</span>
+                    <span class="stat-text">منطقة خدمة</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الاتصال -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>تواصل معنا الآن</h2>
+                <p>نحن هنا لمساعدتك في أي استفسار أو طلب خدمة. لا تتردد في التواصل معنا</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>معلومات الاتصال</h3>
+                    <p>نقدم خدماتنا في جميع أنحاء أم درمان مع وصول سريع لموقعك. اتصل بنا الآن للحصول على خدمة فورية أو استفسار عن الأسعار.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <h4>رقم الهاتف</h4>
+                                <p>+249 13530510</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>الموقع الجغرافي</h4>
+                                <p>أم درمان، السودان</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>ساعات العمل</h4>
+                                <p>24 ساعة طوال أيام الأسبوع</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>البريد الإلكتروني</h4>
+                                <p>abotalipson@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-media">
+                        <a href="https://facebook.com" target="_blank" class="social-icon facebook" title="فيسبوك">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://instagram.com" target="_blank" class="social-icon instagram" title="انستغرام">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/24913530510" target="_blank" class="social-icon whatsapp" title="واتساب">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://tiktok.com" target="_blank" class="social-icon tiktok" title="تيك توك">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>أرسل لنا رسالة</h3>
+                    
+                    <div id="formMessage" class="message"></div>
+                    
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">الاسم الكامل *</label>
+                            <input type="text" id="name" name="name" required placeholder="أدخل اسمك الكامل">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">رقم الهاتف *</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="أدخل رقم هاتفك">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">البريد الإلكتروني</label>
+                            <input type="email" id="email" name="email" placeholder="أدخل بريدك الإلكتروني (اختياري)">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">نوع الخدمة المطلوبة *</label>
+                            <select id="service" name="service" required>
+                                <option value="" selected disabled>اختر الخدمة المطلوبة</option>
+                                <option value="فتح أقفال">فتح أقفال</option>
+                                <option value="برمجة سيارات">برمجة سيارات</option>
+                                <option value="نسخ مفاتيح">نسخ مفاتيح</option>
+                                <option value="استشارة فنية">استشارة فنية</option>
+                                <option value="أخرى">أخرى</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">الرسالة *</label>
+                            <textarea id="message" name="message" required placeholder="أخبرنا بمزيد من التفاصيل عن طلبك..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn" id="submitBtn">
+                            <i class="fas fa-paper-plane"></i> إرسال الرسالة
+                        </button>
+                        
+                        <div class="loading" id="loading">
+                            <i class="fas fa-spinner"></i>
+                            <p>جاري إرسال الرسالة...</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- الفوتر -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>مفتاح <span>أم درمان</span></h2>
+                    <p>الخبرة والجودة في خدمات الأقفال والمفاتيح منذ عام 2010. نحن نضمن لك خدمة موثوقة وآمنة مع فريق من الفنيين المحترفين المدربين على أحدث التقنيات.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="#home">الرئيسية</a></li>
+                        <li><a href="#services">خدماتنا</a></li>
+                        <li><a href="#why-us">لماذا نحن</a></li>
+                        <li><a href="#contact">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-services">
+                    <h3>خدماتنا</h3>
+                    <ul>
+                        <li><a href="#services">فتح الأقفال</a></li>
+                        <li><a href="#services">برمجة السيارات</a></li>
+                        <li><a href="#services">نسخ المفاتيح</a></li>
+                        <li><a href="#contact">خدمات الطوارئ</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© <span id="currentYear"></span> مفتاح أم درمان - جميع الحقوق محفوظة. تصميم وبرمجة متخصصة لخدمات الأقفال والمفاتيح</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // تهيئة الجسيمات المتحركة في الخلفية
+        document.addEventListener('DOMContentLoaded', function() {
+            // جسيمات الخلفية المتحركة
+            if (document.getElementById('particles-js')) {
+                particlesJS('particles-js', {
+                    particles: {
+                        number: { value: 80, density: { enable: true, value_area: 800 } },
+                        color: { value: "#D4AF37" },
+                        shape: { type: "circle" },
+                        opacity: { value: 0.5, random: true },
+                        size: { value: 3, random: true },
+                        line_linked: {
+                            enable: true,
+                            distance: 150,
+                            color: "#D4AF37",
+                            opacity: 0.2,
+                            width: 1
+                        },
+                        move: {
+                            enable: true,
+                            speed: 2,
+                            direction: "none",
+                            random: true,
+                            straight: false,
+                            out_mode: "out",
+                            bounce: false
+                        }
+                    },
+                    interactivity: {
+                        detect_on: "canvas",
+                        events: {
+                            onhover: { enable: true, mode: "repulse" },
+                            onclick: { enable: true, mode: "push" }
+                        }
+                    }
+                });
+            }
+            
+            // الحصول على السنة الحالية للفوتر
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+            
+            // تفعيل القائمة المتنقلة
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mainNav = document.getElementById('mainNav');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                mainNav.classList.toggle('active');
+                
+                // تغيير الأيقونة
+                const icon = this.querySelector('i');
+                if (mainNav.classList.contains('active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // إغلاق القائمة عند النقر على رابط
+            const navLinks = document.querySelectorAll('#mainNav a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mainNav.classList.remove('active');
+                    mobileMenuBtn.querySelector('i').classList.remove('fa-times');
+                    mobileMenuBtn.querySelector('i').classList.add('fa-bars');
+                    document.body.style.overflow = 'auto';
+                    
+                    // تحديث الرابط النشط
+                    navLinks.forEach(item => item.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+            
+            // شريط التقدم أثناء التمرير
+            window.addEventListener('scroll', function() {
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+                document.getElementById("progressBar").style.width = scrolled + "%";
+                
+                // تأثير التصغير على الهيدر عند التمرير
+                const header = document.getElementById('mainHeader');
+                if (window.scrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+                
+                // زر العودة للأعلى
+                const backToTop = document.getElementById('backToTop');
+                if (window.scrollY > 500) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+                
+                // تحديث الرابط النشط في القائمة حسب التمرير
+                const sections = document.querySelectorAll('section');
+                const navLinks = document.querySelectorAll('#mainNav a');
+                
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (scrollY >= (sectionTop - 200)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+            
+            // زر العودة للأعلى
+            document.getElementById('backToTop').addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // تأثيرات الظهور عند التمرير (Scroll Animation)
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+            
+            // مراقبة العناصر لإضافة تأثير الظهور
+            const serviceCards = document.querySelectorAll('.service-card');
+            serviceCards.forEach(card => {
+                observer.observe(card);
+            });
+            
+            const features = document.querySelectorAll('.feature');
+            features.forEach(feature => {
+                observer.observe(feature);
+            });
+            
+            const contactForm = document.querySelector('.contact-form');
+            if (contactForm) {
+                observer.observe(contactForm);
+            }
+            
+            // تأثيرات الإحصائيات المتحركة
+            const statElements = [
+                { element: document.getElementById('stat1'), target: 1250, duration: 2000 },
+                { element: document.getElementById('stat2'), target: 3240, duration: 2000 },
+                { element: document.getElementById('stat3'), target: 14, duration: 2000 },
+                { element: document.getElementById('stat4'), target: 28, duration: 2000 }
+            ];
+            
+            function animateStats() {
+                statElements.forEach(stat => {
+                    if (stat.element) {
+                        const startTime = Date.now();
+                        const endTime = startTime + stat.duration;
+                        
+                        function updateNumber() {
+                            const now = Date.now();
+                            const progress = Math.min((now - startTime) / stat.duration, 1);
+                            const currentValue = Math.floor(progress * stat.target);
+                            
+                            stat.element.textContent = currentValue.toLocaleString();
+                            
+                            if (progress < 1) {
+                                requestAnimationFrame(updateNumber);
+                            } else {
+                                stat.element.textContent = stat.target.toLocaleString();
+                            }
+                        }
+                        
+                        updateNumber();
+                    }
+                });
+            }
+            
+            // تفعيل تأثير الإحصائيات عندما يصل المستخدم إلى قسم الإحصائيات
+            const statsSection = document.querySelector('.stats');
+            const statsObserver = new IntersectionObserver(function(entries) {
+                if (entries[0].isIntersecting) {
+                    animateStats();
+                    statsObserver.unobserve(statsSection);
+                }
+            }, { threshold: 0.5 });
+            
+            if (statsSection) {
+                statsObserver.observe(statsSection);
+            }
+            
+            // تأثير اهتزاز للأيقونة عند النقر على الشعار
+            document.getElementById('logo').addEventListener('click', function() {
+                const icon = this.querySelector('.logo-icon');
+                icon.style.transform = 'rotate(360deg) scale(1.2)';
+                
+                setTimeout(() => {
+                    icon.style.transform = 'rotate(0deg) scale(1)';
+                }, 600);
+            });
+            
+            // إرسال نموذج الاتصال باستخدام EmailJS
+            document.getElementById('contactForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // عرض مؤشر التحميل
+                const submitBtn = document.getElementById('submitBtn');
+                const loading = document.getElementById('loading');
+                const formMessage = document.getElementById('formMessage');
+                
+                submitBtn.style.display = 'none';
+                loading.style.display = 'block';
+                formMessage.style.display = 'none';
+                
+                // جمع بيانات النموذج
+                const formData = {
+                    name: document.getElementById('name').value,
+                    phone: document.getElementById('phone').value,
+                    email: document.getElementById('email').value || 'لم يتم تقديمه',
+                    service: document.getElementById('service').value,
+                    message: document.getElementById('message').value,
+                    to_email: 'abotalipson@gmail.com',
+                    date: new Date().toLocaleString('ar-SA')
+                };
+                
+                // محاكاة إرسال البريد (تستبدل بالكود الحقيقي)
+                setTimeout(() => {
+                    // هذا كود EmailJS الحقيقي - تحتاج إلى:
+                    // 1. إنشاء حساب على https://www.emailjs.com
+                    // 2. استبدال YOUR_SERVICE_ID و YOUR_TEMPLATE_ID و YOUR_USER_ID
+                    // 3. تفعيل الكود المعلق أدناه
+                    
+                    /*
+                    emailjs.init("YOUR_USER_ID");
+                    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData)
+                        .then(function(response) {
+                            console.log('SUCCESS!', response.status, response.text);
+                            formMessage.textContent = 'تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.';
+                            formMessage.className = 'message success';
+                            formMessage.style.display = 'block';
+                            
+                            // إعادة تعيين النموذج
+                            document.getElementById('contactForm').reset();
+                        }, function(error) {
+                            console.log('FAILED...', error);
+                            formMessage.textContent = 'عذراً، حدث خطأ أثناء إرسال رسالتك. يرجى المحاولة مرة أخرى أو الاتصال بنا مباشرة.';
+                            formMessage.className = 'message error';
+                            formMessage.style.display = 'block';
+                        })
+                        .finally(() => {
+                            submitBtn.style.display = 'block';
+                            loading.style.display = 'none';
+                        });
+                    */
+                    
+                    // محاكاة نجاح الإرسال (للعرض التوضيحي فقط)
+                    formMessage.textContent = 'تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.';
+                    formMessage.className = 'message success';
+                    formMessage.style.display = 'block';
+                    
+                    // إعادة تعيين النموذج
+                    document.getElementById('contactForm').reset();
+                    
+                    submitBtn.style.display = 'block';
+                    loading.style.display = 'none';
+                    
+                    // تمرير سلس إلى نموذج الاتصال
+                    setTimeout(() => {
+                        document.getElementById('contact').scrollIntoView({ 
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }, 500);
+                    
+                }, 2000);
+            });
+            
+            // تأثير إدخال النص في حقول النموذج
+            const formInputs = document.querySelectorAll('.form-group input, .form-group textarea, .form-group select');
+            formInputs.forEach(input => {
+                input.addEventListener('focus', function() {
+                    this.parentElement.classList.add('focused');
+                });
+                
+                input.addEventListener('blur', function() {
+                    if (this.value === '') {
+                        this.parentElement.classList.remove('focused');
+                    }
+                });
+            });
+            
+            // إضافة تأثير التمرير السلس للروابط
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const targetId = this.getAttribute('href');
+                    if(targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        e.preventDefault();
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // تأثيرات إضافية عند تحميل الصفحة
+            window.addEventListener('load', function() {
+                // تأثيرات للبطاقات بعد تحميل الصفحة
+                setTimeout(() => {
+                    const heroTitle = document.querySelector('.hero h2');
+                    const heroText = document.querySelector('.hero p');
+                    const heroButtons = document.querySelectorAll('.cta-button');
+                    
+                    if (heroTitle) heroTitle.classList.add('animate__animated', 'animate__fadeInDown');
+                    if (heroText) heroText.classList.add('animate__animated', 'animate__fadeInUp', 'animate__delay-1s');
+                    
+                    heroButtons.forEach((btn, index) => {
+                        btn.classList.add('animate__animated', 'animate__pulse', `animate__delay-${index+2}s`);
+                    });
+                }, 300);
+            });
+            
+            // تأثيرات للشبكات الاجتماعية عند التمرير فوقها
+            const socialIcons = document.querySelectorAll('.social-icon');
+            socialIcons.forEach(icon => {
+                icon.addEventListener('mouseenter', function() {
+                    const iconElement = this.querySelector('i');
+                    if (iconElement.classList.contains('fa-facebook-f')) {
+                        iconElement.classList.add('fa-bounce');
+                    } else if (iconElement.classList.contains('fa-instagram')) {
+                        iconElement.classList.add('fa-shake');
+                    } else if (iconElement.classList.contains('fa-whatsapp')) {
+                        iconElement.classList.add('fa-spin');
+                    } else if (iconElement.classList.contains('fa-tiktok')) {
+                        iconElement.classList.add('fa-beat');
+                    }
+                });
+                
+                icon.addEventListener('mouseleave', function() {
+                    const iconElement = this.querySelector('i');
+                    iconElement.classList.remove('fa-bounce', 'fa-shake', 'fa-spin', 'fa-beat');
+                });
+            });
+            
+            // إضافة تأثيرات صوتية (اختياري)
+            const buttons = document.querySelectorAll('button, .cta-button, .social-icon');
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // يمكن إضافة صوت نقر هنا
+                    console.log('نقر على زر');
+                });
+            });
+        });
+       
+       // في نهاية ملف JavaScript الخاص بك، أضف هذا الكود:
+       
+       document.addEventListener('DOMContentLoaded', function() {
+       
+       // إنشاء عنصر Audio
+       const clickSound = new Audio();
+       clickSound.src = 'https://assets.mixkit.co/sfx/preview/mixkit-select-click-1109.mp3';
+       clickSound.volume = 0.5;
+       
+       // تحميل الصوت مسبقاً
+       clickSound.preload = 'auto';
+       
+       // إضافة أصوات متعددة
+       const sounds = {
+       click: new Audio('https://assets.mixkit.co/sfx/preview/mixkit-select-click-1109.mp3'),
+       hover: new Audio('https://assets.mixkit.co/sfx/preview/mixkit-hover-click-1190.mp3'),
+       success: new Audio('https://assets.mixkit.co/sfx/preview/mixkit-correct-answer-tone-2870.mp3'),
+       error: new Audio('https://assets.mixkit.co/sfx/preview/mixkit-wrong-answer-fail-notification-946.mp3'),
+       open: new Audio('https://assets.mixkit.co/sfx/preview/mixkit-unlock-276.mp3'),
+       key: new Audio('https://assets.mixkit.co/sfx/preview/mixkit-key-2597.mp3')
+       };
+       
+       // ضبط مستوى الصوت لكل صوت
+       Object.values(sounds).forEach(sound => {
+       sound.volume = 0.3;
+       sound.preload = 'auto';
+       });
+       
+       // ضبط مستوى صوت خاص لأصوات معينة
+       sounds.click.volume = 0.5;
+       sounds.key.volume = 0.4;
+       
+       // دالة مساعدة لتشغيل الصوت
+       function playSound(soundName) {
+       if (sounds[soundName]) {
+       // نعيد الصوت للبداية إذا كان مشغلاً
+       sounds[soundName].currentTime = 0;
+       sounds[soundName].play().catch(e => {
+       console.log('لم يتم تشغيل الصوت:', e);
+       });
+       }
+       }
+       
+       // إضافة أصوات لجميع الأزرار
+       const buttons = document.querySelectorAll('button, .cta-button, .social-icon, .submit-btn, .mobile-menu-btn');
+       
+       buttons.forEach(button => {
+       // صوت عند النقر
+       button.addEventListener('click', function() {
+       playSound('click');
+       });
+       
+       // صوت عند التمرير فوق الزر (اختياري)
+       button.addEventListener('mouseenter', function() {
+       playSound('hover');
+       });
+       });
+       
+       // صوت خاص للشعار (مفتاح)
+       document.getElementById('logo').addEventListener('click', function() {
+       playSound('key');
+       });
+       
+       // صوت للروابط في القائمة
+       const navLinks = document.querySelectorAll('#mainNav a');
+       navLinks.forEach(link => {
+       link.addEventListener('click', function() {
+       playSound('click');
+       });
+       });
+       
+       // صوت عند فتح/إغلاق القائمة المتنقلة
+       document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+       const nav = document.getElementById('mainNav');
+       if (nav.classList.contains('active')) {
+       playSound('open');
+       } else {
+       playSound('click');
+       }
+       });
+       
+       // صوت عند إرسال النموذج
+       document.getElementById('contactForm').addEventListener('submit', function(e) {
+       e.preventDefault();
+       
+       // تشغيل صوت النقر أولاً
+       playSound('click');
+       
+       // محاكاة إرسال النموذج
+       setTimeout(() => {
+       // تشغيل صوت النجاح بعد 1.5 ثانية
+       playSound('success');
+       
+       // عرض رسالة النجاح
+       const formMessage = document.getElementById('formMessage');
+       formMessage.textContent = 'تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.';
+       formMessage.className = 'message success';
+       formMessage.style.display = 'block';
+       
+       // إعادة تعيين النموذج
+       document.getElementById('contactForm').reset();
+       }, 1500);
+       });
+       
+       // إضافة صوت عند النقر على بطاقات الخدمات
+       const serviceCards = document.querySelectorAll('.service-card');
+       serviceCards.forEach(card => {
+       card.addEventListener('click', function() {
+       playSound('click');
+       });
+       });
+       
+       // إضافة صوت عند التفاعل مع عناصر الاتصال
+       const contactItems = document.querySelectorAll('.contact-item');
+       contactItems.forEach(item => {
+       item.addEventListener('click', function() {
+       playSound('hover');
+       });
+       });
+       });
+    </script>
+</body>
+</html>
