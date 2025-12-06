@@ -26,7 +26,10 @@
     
     <!-- مكتبة particles.js للخلفيات المتحركة -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    
+
+    <!-- my e-mail services -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <style>
         /* CSS الأساسي */
         :root {
@@ -1624,9 +1627,9 @@
                     // 2. استبدال YOUR_SERVICE_ID و YOUR_TEMPLATE_ID و YOUR_USER_ID
                     // 3. تفعيل الكود المعلق أدناه
                     
-                    /*
-                    emailjs.init("YOUR_USER_ID");
-                    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData)
+                    
+                    emailjs.init("s4Cvw_kJP7-B4V219");
+                    emailjs.send('service_9gfh9vt', 'template_t3i8yfh', formData)
                         .then(function(response) {
                             console.log('SUCCESS!', response.status, response.text);
                             formMessage.textContent = 'تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.';
@@ -1645,7 +1648,7 @@
                             submitBtn.style.display = 'block';
                             loading.style.display = 'none';
                         });
-                    */
+                    
                     
                     // محاكاة نجاح الإرسال (للعرض التوضيحي فقط)
                     formMessage.textContent = 'تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.';
